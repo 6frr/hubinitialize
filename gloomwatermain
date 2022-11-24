@@ -12,7 +12,7 @@ local Window = Rayfield:CreateWindow({
         Discord = {
         	Enabled = false,
         	Invite = "sirius", -- The Discord invite code, do not include discord.gg/
-        	RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        	RememberJoins = false -- Set this to false to make them join the discord every time they load it up
         },
 	KeySystem = false, -- Set this to true to use our key system
 	KeySettings = {
@@ -131,6 +131,16 @@ local Button11 = Tab:CreateButton({
 game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
  end
 })
+local Button17 = Tab:CreateButton({
+	Name = "Toggle GunClerk",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.GunClerk
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
 local Button12 = Tab:CreateButton({
 	Name = "Toggle Pawn Shop",
 	Callback = function()
@@ -181,7 +191,34 @@ local Button16 = Tab2:CreateButton({
     [1] = game:GetService("Players").LocalPlayer
 }
 
-game:GetService("Players").LocalPlayer.Character:FindFirstChildIsA("Tool").Events.Reload:FireServer(unpack(args))
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Events.Reload:FireServer(unpack(args))
 
+	end,
+})
+local Tab3 = Window:CreateTab("Cop stuff", 0) -- Title, Image
+local Input = Tab3:CreateInput({
+	Name = "Grab (have grab tool equipped, 50% chance it works)",
+	PlaceholderText = "Input name of the player",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+local args = {
+    [1] = "Cuff",
+    [2] = game:GetService("Players")[(Text)].Character.LeftUpperArm
+}
+
+game:GetService("Players").LocalPlayer.Character.Grab.RemoteEvent:FireServer(unpack(args))
+	end,
+})
+local Input2 = Tab3:CreateInput({
+	Name = "Ungrab (have grab tool equipped, 50% chance it works)",
+	PlaceholderText = "Input name of the player",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+local args = {
+    [1] = "Uncuff",
+    [2] = game:GetService("Players")[(Text)].Character.LeftUpperArm
+}
+
+game:GetService("Players").LocalPlayer.Character.Grab.RemoteEvent:FireServer(unpack(args))
 	end,
 })
