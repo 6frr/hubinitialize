@@ -164,3 +164,24 @@ local Button14 = Tab2:CreateButton({
 	end
 	end,
 })
+local Button15 = Tab2:CreateButton({
+	Name = "Shoot any equipped gun (must be equipped)",
+	Callback = function()
+	local args = {
+    [1] = Vector3.new(327.12213134765625, 3.6121790409088135, -77.840087890625)
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Events.FireEvent:FireServer(unpack(args))
+	end,
+})
+local Button16 = Tab2:CreateButton({
+	Name = "Reload any equipped gun (must be equipped)",
+	Callback = function()
+	local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChildIsA("Tool").Events.Reload:FireServer(unpack(args))
+
+	end,
+})
