@@ -151,3 +151,16 @@ local Button13 = Tab:CreateButton({
 game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
  end
 })
+local Tab2 = Window:CreateTab("Tools", 0) -- Title, Image
+local Section2 = Tab2:CreateSection("Steal all Tools")
+local Button14 = Tab2:CreateButton({
+	Name = "Steal all tools",
+	Callback = function()
+	local descendants = game:GetDescendants()
+	for index, descendant in pairs(descendants) do
+	    if descendant:IsA("Tool") then
+	        descendant.Parent = game.Players.LocalPlayer.Backpack
+	    end
+	end
+	end,
+})
