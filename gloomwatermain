@@ -1,0 +1,153 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+	Name = "6fr Hub",
+	LoadingTitle = "Loading HUB",
+	LoadingSubtitle = "by 6",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = "LEP: Gloomwater", -- Create a custom folder for your hub/game
+		FileName = "6fr Hub"
+	},
+        Discord = {
+        	Enabled = false,
+        	Invite = "sirius", -- The Discord invite code, do not include discord.gg/
+        	RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        },
+	KeySystem = false, -- Set this to true to use our key system
+	KeySettings = {
+	}
+	
+})
+local Tab = Window:CreateTab("Remotes", 0) -- Title, Image
+local Section = Tab:CreateSection("Toggle NPCs")
+local Button = Tab:CreateButton({
+	Name = "Toggle Clothing Store",
+	Callback = function()
+		local args = {
+    [1] = workspace.NPCS.ClothingStore
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+	end,
+})
+local Button2 = Tab:CreateButton({
+	Name = "Toggle Job Center",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.JobCenter
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button3 = Tab:CreateButton({
+	Name = "Toggle Barber",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS["Barber Worker"]
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button4 = Tab:CreateButton({
+	Name = "Toggle Suit Store",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.SuitStore
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button5 = Tab:CreateButton({
+	Name = "Toggle Clothing StoreG",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.ClothingStoreG
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button6 = Tab:CreateButton({
+	Name = "Toggle Dealership",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.Dealership
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button7 = Tab:CreateButton({
+	Name = "Toggle Tattoo",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.Tattoo
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button8 = Tab:CreateButton({
+	Name = "Toggle Electronics",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.Electronics
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button9 = Tab:CreateButton({
+	Name = "Toggle ThriftStore",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.ThriftStore
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button10 = Tab:CreateButton({
+	Name = "Toggle Salon Worker",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS["Salon Worker"]
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button11 = Tab:CreateButton({
+	Name = "Toggle Icebox",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.IceBoxEmployee
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button12 = Tab:CreateButton({
+	Name = "Toggle Pawn Shop",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS.PawnShop
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
+local Button13 = Tab:CreateButton({
+	Name = "Toggle Bank Owner",
+	Callback = function()
+	local args = {
+    [1] = workspace.NPCS["Bank Owner"]
+}
+
+game:GetService("ReplicatedStorage").Events.NPC:FireServer(unpack(args))
+ end
+})
